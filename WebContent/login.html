@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Credenciales</title>
+<script type="text/javascript" language="JavaScript">
+function carga(){
+	document.getElementById("usuario").focus();
+	
+}
+function valideDatos(){
+	var usuario = document.getElementById("usuario");
+	var password = document.getElementById("password");
+	if ((usuario.value == "" || usuario.value == '' || usuario.value == null) &&
+			(password.value == "" || password.value == '' || password.value == null))
+			{
+		alert("Ingresa tu usuario y tu password");
+		usuario.focus();
+		return false;
+		}
+	else if (usuario.value==""|| usuario.value == '' || usuario.value == null){
+		alert("Ingresa tu usuario");
+		usuario.focus();
+		return false;
+	}else if (password.value==""|| password.value == '' || password.value == null){
+		alert("Ingresa tu password");
+		password.focus();
+		return false;
+	}else{
+		return true;
+	}
+}</script>
+</head>
+<body onload="carga();">
+<p>Investigar:</p>
+<p>HTML</p>
+<p>CSS</p>
+<p>JavaScript</p>
+<p>Jsps</p>
+<p>Servlets</p>
+<p>Servidor web</p>
+<p> Servidor de aplicacion</p>
+
+<form action="LoginServlet" method="POST"  onsubmit ="return valideDatos();">
+<table align="center">
+<tr>
+<td colspan="2" style="font-weight: bold; size: 25px; color: green;"> Ingresa tu usuario y contraseña</td>
+
+</tr>
+<tr>
+<td style="font-weight: bold; size: 12px; color: blue;" align="right">Usuario</td>
+<td><input type="text" name="usuario" id="usuario"> </td>
+
+</tr>
+<tr>
+<td style="font-weight: bold; size: 12px; color: navy;" align="right">contraseña</td>
+<td><input type="password" name="password" id="password"> </td>
+
+</tr>
+
+<tr>
+<td><input type="button" value= "cancelar" style="font-size: 14px; color: gray; "></td>
+<td><input type="submit" value="aceptar" style="font-size: 14px; color: blue;"> </td>
+
+</tr>
+</table>
+
+
+</form>
+
+
+</body>
+</html>
